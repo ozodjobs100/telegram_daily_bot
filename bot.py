@@ -2,9 +2,14 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import asyncio
 import db
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # .env fayldan TOKEN ni yuklaydi
+TOKEN = os.getenv("TOKEN")
+
 
 ADMIN_ID = 6875167708  # <-- Bu yerga o'z Telegram user_id'ingizni yozing
-TOKEN = "7829919862:AAFb3SXOEN0XFv8-AUr_lhxXZ_taRTjF16I"  # <-- BotFather'dan olingan tokenni yozing
 
 db.setup()
 
